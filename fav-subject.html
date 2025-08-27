@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite subject</title>
+    <style>
+      body {
+        background: rgba(173, 216, 230, 0.1);
+      }
+      .container {
+        text-align: center;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        width: 80%;
+        box-shadow: lightblue 0px 0px 10px, snow 0px 0px 10px;
+        margin: auto;
+        margin-top: 30px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .form {
+        display: flex;
+        justify-content: space-around;
+      }
+      .subject {
+        width: 190%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid lightblue;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background: lightblue;
+        color: black;
+        cursor: pointer;
+      }
+      button:hover {
+        background: deepskyblue;
+      }
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>St marks Secondary</header>
+      <h1>Science is Bomb!</h1>
+      <p>What was your favourite school subject?</p>
+
+      <ul>
+        <li>Chemistry</li>
+        <li>Biology</li>
+        <li>Physics</li>
+      </ul>
+      <div>
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+      </div>
+      <div class="form">
+        <form action="/submit">
+          <label for="subject"></label>
+
+          <input
+            type="text"
+            id="subject"
+            class="subject"
+            placeholder="Enter a subject"
+            required
+            minlength="3"
+          />
+        </form>
+        <button>Submit</button>
+      </div>
+      <p>Here's some visuals to help you decide</p>
+    </div>
+  </body>
+  <footer>Coded by <a href="">Nkosiyazi sukazi</a></footer>
+</html>
