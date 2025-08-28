@@ -73,6 +73,11 @@
       button:hover {
         background: deepskyblue;
       }
+      video {
+        width: 70%;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
       footer {
         text-align: center;
         margin-top: 20px;
@@ -137,12 +142,82 @@
             placeholder="Enter a science subject"
             required
             minlength="3"
+            maxlength="20"
           />
         </form>
         <button>Submit</button>
       </div>
-      <p>Here's some visuals to help you decide</p>
+      <div class="more-info">
+        <div class="Chemistry" id="chemistry">
+          <h3>Chemistry</h3>
+          <p>The science of stuff</p>
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/FSyAehMdpyI?si=g-HzZSFJiHAT9YMh"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="Physics" id="physics">
+          <h3>Physics</h3>
+          <p>Newton's laws of motion</p>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/-w6oW1ut4Dw?si=EQj4ec9hYzdCdPVv"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="Biology" id="biology">
+          <h3>Biology</h3>
+          <p>What is Life?</p>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/tZE_fQFK8EY?si=n3CN-FRanzzbH37F"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   </body>
+  <script>
+    let button = document.querySelector("button");
+    button.addEventListener("click", function () {
+      let subject = document.querySelector("#subject").value;
+      alert(`Your favorite science subject is  ${subject}!`);
+      if (subject === "Chemistry") {
+        document.querySelector(".Chemistry").style.display = "block";
+        document.querySelector(".Physics").style.display = "none";
+        document.querySelector(".Biology").style.display = "none";
+      } else if (subject === "Physics") {
+        document.querySelector(".Chemistry").style.display = "none";
+        document.querySelector(".Physics").style.display = "block";
+        document.querySelector(".Biology").style.display = "none";
+      } else if (subject === "Biology") {
+        document.querySelector(".Chemistry").style.display = "none";
+        document.querySelector(".Physics").style.display = "none";
+        document.querySelector(".Biology").style.display = "block";
+      } else {
+        alert(
+          "Please enter a valid science subject: Chemistry, Physics, or Biology."
+        );
+      }
+    });
+  </script>
   <footer>Coded by <a href="">Nkosiyazi sukazi</a></footer>
 </html>
