@@ -78,7 +78,12 @@
         border-radius: 5px;
         margin-top: 10px;
       }
-      footer {
+      input[name="chemicals"] {
+        text-align: left;
+      }
+ 
+    
+     footer {
         text-align: center;
         margin-top: 20px;
         font-size: 14px;
@@ -162,7 +167,37 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
+
+           <div class="quiz">
+  <form action="/submit"> 
+    <p>What was translated from the Greek word for "indivisible"?</p>     
+
+    
+      <input type="radio" name="components" id="atom" checked />
+      <label for="atom">Atom</label>
+      <br>
+        <input type="radio" name="components" id="proton" checked />
+        <label for="proton">Proton</label>
+        <br>
+      <input type="radio" name="components" id="chemical" checked />
+      <label for="chemical">Chemical</label>
+
+      <p>Which of the following does not make up an atom?</p>
+      <br>
+      <input type="radio" name="blocks" id="electron" checked />
+      <label for="electron">Electron</label>
+      <br>
+        <input type="radio" name="blocks" id="element" checked />
+        <label for="element">Element</label>
+        <br>
+      <input type="radio" name="blocks" id="neutron" checked />
+      <label for="neutron">Neutron</label>
+        
+  </form>
+  </div>
         </div>
+
+       
 
         <div class="Physics" id="physics">
           <h3>Physics</h3>
@@ -177,6 +212,17 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
+
+          <form action="/submit">
+            <p>Which of the following examples describe Newton's laws of motion?(Select all that apply)</p>
+          <input type="checkbox" name="" id="inertia"><label for="inertia">Trust a rock to stay right where you left it, unless there's an earthquake or the area is cleared to build a mall.</label>
+          <br>
+        <input type="checkbox" name="" id="force"><label for="force">Just because you can push a friend to the ground during an altercation, doesn't mean you can move a mountain.</label>
+        <br>
+        <input type="checkbox" name="" id="acceleration"><label for="acceleration">You don't have to pedal your bike downhill, but you might have to walk and push it uphill.</label>
+        <br>
+        <input type="checkbox" name="" id="extra"><label for="extra">The first step to a succesful shuffle dance is to jump foward.</label>
+        </form>
         </div>
         <div class="Biology" id="biology">
           <h3>Biology</h3>
@@ -192,12 +238,20 @@
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
+<div>
+        <form action="/submit">
+            <label for="answer">What is biology?</label>
+        
+            <input type="text" id="answer"/>
+          </form>
+          </div>
       </div>
     </div>
   </body>
   <script>
     let button = document.querySelector("button");
     button.addEventListener("click", function () {
+      
       let subject = document.querySelector("#subject").value;
       alert(`Your favorite science subject is  ${subject}!`);
       if (subject === "Chemistry") {
