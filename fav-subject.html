@@ -32,6 +32,10 @@
         display: flex;
         justify-content: space-between;
       }
+      .images {
+        display: flex;
+        justify-content: space-between;
+      }
       .images img:hover {
         transform: scale(1.05);
         transition: transform 0.3s;
@@ -146,15 +150,15 @@
       <div class="images">
         <img
           src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/172/840/original/nikita-palenov-THLPC4Le0-I-unsplash.jpg?1756292248"
-          alt=""
+          alt="image of physics"
         />
         <img
           src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/172/863/original/pexels-kindelmedia-8326459.jpg?1756293594"
-          alt=""
+          alt="image of chemistry"
         />
         <img
           src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/172/872/original/pexels-googledeepmind-18069424.jpg?1756294157"
-          alt=""
+          alt="image of biology"
         />
       </div>
       <div class="description">
@@ -190,7 +194,6 @@
       <div class="more-info" >
         <div class="Chemistry" id="chemistry">
           <h3>Chemistry</h3>
-          <p>The science of stuff</p>
 
           <iframe
             width="560"
@@ -240,7 +243,7 @@
 
         <div class="Physics" id="physics">
           <h3>Physics</h3>
-          <p>Newton's laws of motion</p>
+
           <iframe
             width="560"
             height="315"
@@ -252,21 +255,20 @@
             allowfullscreen
           ></iframe>
 
-          <form action="/submit">
+          <form action="/submit" name="PF">
             <p>Which of the following examples describe Newton's laws of motion?(Select all that apply)</p>
            
-        <input type="checkbox" name="" class="inertia" id="inertia"><label for="inertia" class="inertia">Trust a rock to stay right where you left it, unless there's an earthquake or the area is cleared to build a mall.</label>
+        <input type="checkbox" name="c1" class="inertia" id="inertia" value="answer1"><label for="inertia" class="inertia">Trust a rock to stay right where you left it, unless there's an earthquake or the area is cleared to build a mall.</label>
           
-        <input type="checkbox" name="" class="force" id="force"><label for="force" class="force">Just because you can push a friend to the ground during an altercation, doesn't mean you can move a mountain.</label>
+        <input type="checkbox" name="c1" class="force" id="force" value="answer2"><label for="force" class="force">Just because you can push a friend to the ground during an altercation, doesn't mean you can move a mountain.</label>
        
-        <input type="checkbox" name="" class="acceleration" id="acceleration"><label for="acceleration" class="acceleration">You don't have to pedal your bike downhill, but you might have to walk and push it uphill.</label>
+        <input type="checkbox" name="c1" class="acceleration" id="acceleration" value="answer3"><label for="acceleration" class="acceleration">You don't have to pedal your bike downhill, but you might have to walk and push it uphill.</label>
         
         </form>
         <button class="quiz" id = "physics-quiz">Submit quiz</button>
         </div>
         <div class="Biology" id="biology">
           <h3>Biology</h3>
-          <p>What is Life?</p>
 
         <iframe
           width="560"
@@ -293,7 +295,6 @@
     button.addEventListener("click", function () {
       
       let subject = document.querySelector("#subject").value;
-      alert(`Your favorite science subject is  ${subject}!`);
 
       if (subject === "chemistry") {
         document.querySelector(".Chemistry").style.display = "block";
@@ -313,6 +314,25 @@
         );
       }
     });
+
+    let button1 = document.querySelector("#chemistry-quiz");
+
+    button1.addEventListener("click", function(){
+      let correctAnswers = 0;
+      let components = document.getElementsByName("components");
+      let blocks = document.getElementsByName("blocks");
+
+      if (components[0].checked) {
+        correctAnswers++;
+      }
+      if (blocks[1].checked) {
+        correctAnswers++;
+      }
+
+      alert("You got " + correctAnswers + " out of 2 questions correct!");
+
+    });
+    
   </script>
   <footer>Coded by <a href="">Nkosiyazi sukazi</a></footer>
 </html>
