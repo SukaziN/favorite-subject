@@ -208,7 +208,7 @@
 
            <div class="quiz">
   <form action="/submit"> 
-    <p>What was translated from the Greek word for "indivisible"?</p>     
+    <p>What was translated from the Greek word for "indivisible"?(1)</p>     
 
     <div class="radio-group">
       <input type="radio" name="components" id="atom" checked />
@@ -221,16 +221,16 @@
       <label for="chemical">Chemical</label>
       </div>
 
-      <p>Which of the following does not make up an atom?</p>
+      <p>Which of the following does NOT make up an atom?(1)</p>
       <div class="radio-group">
       
-      <input type="radio" name="blocks" id="electron" checked />
+      <input type="radio" name="blocks" id="electron"  />
       <label for="electron">Electron</label>
      
-        <input type="radio" name="blocks" id="element" checked />
+        <input type="radio" name="blocks" id="element"  />
         <label for="element">Element</label>
       
-      <input type="radio" name="blocks" id="neutron" checked />
+      <input type="radio" name="blocks" id="neutron"  />
       <label for="neutron">Neutron</label>
      
         </div>
@@ -255,14 +255,14 @@
             allowfullscreen
           ></iframe>
 
-          <form action="/submit" name="PF">
-            <p>Which of the following examples describe Newton's laws of motion?(Select all that apply)</p>
+          <form action="/submit" >
+            <p>Which of the following examples describe Newton's laws of motion?(Select all that apply)(3)</p>
            
-        <input type="checkbox" name="c1" class="inertia" id="inertia" value="answer1"><label for="inertia" class="inertia">Trust a rock to stay right where you left it, unless there's an earthquake or the area is cleared to build a mall.</label>
+        <input type="checkbox" name="c1" class="inertia" id="inertia"><label for="inertia" class="inertia">Trust a rock to stay right where you left it, unless there's an earthquake or the area is cleared to build a mall.</label>
           
-        <input type="checkbox" name="c1" class="force" id="force" value="answer2"><label for="force" class="force">Just because you can push a friend to the ground during an altercation, doesn't mean you can move a mountain.</label>
+        <input type="checkbox" name="c1" class="force" id="force"><label for="force" class="force">Just because you can push a friend to the ground during an altercation, doesn't mean you can move a mountain.</label>
        
-        <input type="checkbox" name="c1" class="acceleration" id="acceleration" value="answer3"><label for="acceleration" class="acceleration">You don't have to pedal your bike downhill, but you might have to walk and push it uphill.</label>
+        <input type="checkbox" name="c1" class="acceleration" id="acceleration"><label for="acceleration" class="acceleration">You don't have to pedal your bike downhill, but you might have to walk and push it uphill.</label>
         
         </form>
         <button class="quiz" id = "physics-quiz">Submit quiz</button>
@@ -332,6 +332,31 @@
       alert("You got " + correctAnswers + " out of 2 questions correct!");
 
     });
+
+    let button2 = document.querySelector("#physics-quiz");
+
+    button2.addEventListener("click", function(){
+      let correctAnswers = 0;
+      let inertia = document.getElementById("inertia");
+
+      let force = document.getElementById("force");
+
+      let acceleration = document.getElementById("acceleration");
+
+      if (inertia.checked) {
+        correctAnswers++;
+      }
+      if (force.checked) {
+        correctAnswers++;
+      }
+      if (acceleration.checked) {
+        correctAnswers++;
+      }
+
+      alert("You got " + correctAnswers + " correct for this question!");
+
+    });
+
     
   </script>
   <footer>Coded by <a href="">Nkosiyazi sukazi</a></footer>
