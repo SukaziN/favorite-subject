@@ -283,7 +283,7 @@
 <div>
         <form action="/submit">
             <label for="answer" class="answer">What is biology?</label>
-            <input type="text" class="answer" id="answer"/>
+            <input type="text" class="answer" id="answer" required/>
           </form>
           <button class="quiz" id = "biology-quiz">Submit quiz</button>
           </div>
@@ -357,7 +357,20 @@
 
     });
 
-    
+    let button3 = document.querySelector("#biology-quiz");
+
+    button3.addEventListener("click", function () {
+
+      let correctAnswer = document.querySelector("#answer").value.trim().toLowerCase();
+
+      if (correctAnswer === "biology is the study of living things"|| correctAnswer === "the study of living things") {
+        alert("Correct!");
+      } else {
+        alert("Incorrect, the correct answer is: Biology is the study of living things.");
+      }
+
+    });
+
   </script>
   <footer>Coded by <a href="">Nkosiyazi sukazi</a></footer>
 </html>
